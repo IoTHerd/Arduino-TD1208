@@ -24,6 +24,11 @@
 #define ATCOMMAND_TIMEOUT (3000)
 #define ATSIGFOXTX_TIMEOUT (30000)
 
+TD1208::TD1208(SoftwareSerial* serialPort)
+{
+	TD1208::serialPort = serialPort;
+}
+
 bool TD1208::sendAT()
 {
 	return sendATCommand(ATCOMMAND, ATCOMMAND_TIMEOUT, nullptr);
